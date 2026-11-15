@@ -1,0 +1,10 @@
+{
+  "name": "MoneyMind AI",
+  "description": "Personal finance workspace with deterministic cashflow analytics, budget pacing, TF-IDF expense classification, walk-forward spending forecasts, and a Gemini-powered AI finance assistant.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

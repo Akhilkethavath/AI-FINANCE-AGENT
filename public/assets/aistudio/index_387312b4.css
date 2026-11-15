@@ -1,0 +1,471 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display-family);
+  --font-mono: var(--font-mono-family);
+}
+
+:root {
+  --radius: 0.5rem;
+  --font-body: "Plus Jakarta Sans", "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  --font-display-family: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-mono-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --background: oklch(0.975 0.009 155);
+  --foreground: oklch(0.22 0.025 192);
+  --card: oklch(0.995 0.003 155);
+  --card-foreground: oklch(0.22 0.025 192);
+  --popover: oklch(0.995 0.003 155);
+  --popover-foreground: oklch(0.22 0.025 192);
+  --primary: oklch(0.4 0.09 178);
+  --primary-foreground: oklch(0.99 0.004 155);
+  --secondary: oklch(0.94 0.025 168);
+  --secondary-foreground: oklch(0.3 0.055 185);
+  --muted: oklch(0.95 0.012 170);
+  --muted-foreground: oklch(0.52 0.025 195);
+  --accent: oklch(0.92 0.055 71);
+  --accent-foreground: oklch(0.35 0.055 55);
+  --destructive: oklch(0.58 0.19 27);
+  --destructive-foreground: oklch(0.99 0.005 25);
+  --border: oklch(0.89 0.018 174);
+  --input: oklch(0.89 0.018 174);
+  --ring: oklch(0.56 0.09 177);
+  --chart-1: oklch(0.47 0.12 177);
+  --chart-2: oklch(0.63 0.14 39);
+  --chart-3: oklch(0.58 0.12 230);
+  --chart-4: oklch(0.72 0.14 95);
+  --chart-5: oklch(0.57 0.16 327);
+  --sidebar: oklch(0.985 0.008 165);
+  --sidebar-foreground: oklch(0.22 0.025 192);
+  --sidebar-primary: oklch(0.4 0.09 178);
+  --sidebar-primary-foreground: oklch(0.99 0.004 155);
+  --sidebar-accent: oklch(0.94 0.025 168);
+  --sidebar-accent-foreground: oklch(0.3 0.055 185);
+  --sidebar-border: oklch(0.89 0.018 174);
+  --sidebar-ring: oklch(0.56 0.09 177);
+  --success: oklch(0.52 0.12 155);
+  --warning: oklch(0.65 0.16 66);
+  --chart-income: oklch(0.48 0.12 177);
+  --chart-expense: oklch(0.63 0.14 39);
+  --chart-grid: oklch(0.9 0.015 175);
+  --chart-label: oklch(0.54 0.025 195);
+  --auth-art-base: oklch(0.95 0.018 165);
+  --auth-art-grid: oklch(0.82 0.04 170);
+}
+
+.dark {
+  --background: oklch(0.19 0.02 192);
+  --foreground: oklch(0.96 0.012 165);
+  --card: oklch(0.235 0.02 192);
+  --card-foreground: oklch(0.96 0.012 165);
+  --popover: oklch(0.235 0.02 192);
+  --popover-foreground: oklch(0.96 0.012 165);
+  --primary: oklch(0.72 0.12 167);
+  --primary-foreground: oklch(0.2 0.03 192);
+  --secondary: oklch(0.29 0.035 185);
+  --secondary-foreground: oklch(0.93 0.018 165);
+  --muted: oklch(0.28 0.023 192);
+  --muted-foreground: oklch(0.72 0.025 185);
+  --accent: oklch(0.36 0.07 65);
+  --accent-foreground: oklch(0.95 0.02 70);
+  --destructive: oklch(0.68 0.17 27);
+  --destructive-foreground: oklch(0.99 0.005 25);
+  --border: oklch(0.36 0.024 190);
+  --input: oklch(0.36 0.024 190);
+  --ring: oklch(0.66 0.1 170);
+  --chart-1: oklch(0.7 0.13 170);
+  --chart-2: oklch(0.75 0.14 48);
+  --chart-3: oklch(0.72 0.11 230);
+  --chart-4: oklch(0.78 0.14 95);
+  --chart-5: oklch(0.7 0.15 327);
+  --sidebar: oklch(0.21 0.02 192);
+  --sidebar-foreground: oklch(0.96 0.012 165);
+  --sidebar-primary: oklch(0.72 0.12 167);
+  --sidebar-primary-foreground: oklch(0.2 0.03 192);
+  --sidebar-accent: oklch(0.29 0.035 185);
+  --sidebar-accent-foreground: oklch(0.93 0.018 165);
+  --sidebar-border: oklch(0.36 0.024 190);
+  --sidebar-ring: oklch(0.66 0.1 170);
+  --success: oklch(0.7 0.13 155);
+  --warning: oklch(0.76 0.15 72);
+  --chart-income: oklch(0.72 0.12 167);
+  --chart-expense: oklch(0.75 0.14 48);
+  --chart-grid: oklch(0.37 0.025 190);
+  --chart-label: oklch(0.72 0.025 185);
+  --auth-art-base: oklch(0.25 0.03 190);
+  --auth-art-grid: oklch(0.38 0.035 177);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.finance-app {
+  font-family: var(--font-body);
+}
+
+.finance-app h1,
+.finance-app h2,
+.finance-app h3,
+.finance-app .metric-number {
+  font-family: var(--font-display-family);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.nav-item svg {
+  width: 17px;
+  height: 17px;
+}
+
+.nav-item-active {
+  color: var(--primary);
+  background: var(--secondary);
+  box-shadow: inset 2px 0 0 var(--primary);
+}
+
+.side-rail {
+  background: var(--sidebar);
+  color: var(--sidebar-foreground);
+}
+
+.side-rail .brand-mark,
+.auth-screen .brand-mark {
+  box-shadow: 0 5px 14px oklch(0.4 0.09 178 / 0.18);
+}
+
+.metric-panel {
+  border-radius: 8px;
+  box-shadow: 0 1px 2px oklch(0.2 0.02 190 / 0.035);
+}
+
+.metric-icon {
+  background: var(--secondary);
+  color: var(--primary);
+}
+
+.metric-income .metric-icon {
+  color: var(--success);
+  background: color-mix(in oklch, var(--success) 11%, var(--card));
+}
+
+.metric-expense .metric-icon {
+  color: var(--chart-expense);
+  background: color-mix(in oklch, var(--chart-expense) 11%, var(--card));
+}
+
+.metric-balance .metric-icon {
+  color: var(--chart-3);
+  background: color-mix(in oklch, var(--chart-3) 11%, var(--card));
+}
+
+.data-section,
+.budget-card,
+.assistant-panel,
+.forecast-strip {
+  border-radius: 8px;
+}
+
+.chart-key {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.chart-key i,
+.category-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.key-income {
+  background: var(--chart-income);
+}
+
+.key-expense {
+  margin-left: 7px;
+  background: var(--chart-expense);
+}
+
+.category-dot {
+  width: 7px;
+  height: 7px;
+}
+
+.finance-table th {
+  height: 40px;
+  border-bottom: 1px solid var(--border);
+  padding: 0 13px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.finance-table td {
+  height: 54px;
+  border-bottom: 1px solid var(--border);
+  padding: 0 13px;
+  font-size: 13px;
+}
+
+.finance-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.transaction-icon.expense {
+  color: var(--chart-expense);
+  background: color-mix(in oklch, var(--chart-expense) 12%, var(--card));
+}
+
+.transaction-icon.income {
+  color: var(--success);
+  background: color-mix(in oklch, var(--success) 11%, var(--card));
+}
+
+.amount-positive {
+  color: var(--success);
+}
+
+.icon-button {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: 6px;
+  color: var(--muted-foreground);
+  transition: background-color 140ms ease, color 140ms ease;
+}
+
+.icon-button:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+
+.destructive-icon:hover {
+  background: color-mix(in oklch, var(--destructive) 10%, var(--card));
+  color: var(--destructive);
+}
+
+.budget-track {
+  background: color-mix(in oklch, var(--primary) 10%, var(--muted));
+}
+
+.budget-fill {
+  background: var(--success);
+  transition: width 280ms ease;
+}
+
+.budget-fill.warning {
+  background: var(--warning);
+}
+
+.budget-fill.exceeded {
+  background: var(--destructive);
+}
+
+.forecast-link {
+  color: var(--primary);
+}
+
+.forecast-link:hover {
+  text-decoration: underline;
+}
+
+.insight-item {
+  border-radius: 8px;
+}
+
+.insight-icon {
+  color: var(--primary);
+  background: var(--secondary);
+}
+
+.insight-item.increase .insight-icon,
+.insight-item.budget_exceeded .insight-icon {
+  color: var(--destructive);
+  background: color-mix(in oklch, var(--destructive) 10%, var(--card));
+}
+
+.insight-item.decrease .insight-icon,
+.insight-item.savings .insight-icon {
+  color: var(--success);
+  background: color-mix(in oklch, var(--success) 11%, var(--card));
+}
+
+.insight-item.budget_warning .insight-icon {
+  color: var(--warning);
+  background: color-mix(in oklch, var(--warning) 12%, var(--card));
+}
+
+.assistant-bubble {
+  border-radius: 8px;
+}
+
+.auth-screen {
+  background: var(--background);
+}
+
+.auth-story {
+  background: var(--auth-art-base);
+}
+
+.auth-story-art {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.art-grid {
+  position: absolute;
+  inset: 8% 0 10%;
+  background-image: linear-gradient(to right, var(--auth-art-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--auth-art-grid) 1px, transparent 1px);
+  background-size: 54px 54px;
+  opacity: 0.32;
+  mask-image: linear-gradient(to bottom, transparent, black 16%, black 82%, transparent);
+}
+
+.art-column {
+  position: absolute;
+  bottom: 18%;
+  width: 8%;
+  border-radius: 5px 5px 0 0;
+  background: color-mix(in oklch, var(--primary) 18%, transparent);
+}
+
+.art-column-one { left: 48%; height: 15%; }
+.art-column-two { left: 59%; height: 23%; }
+.art-column-three { left: 70%; height: 19%; }
+.art-column-four { left: 81%; height: 32%; }
+
+.art-trend {
+  position: absolute;
+  right: -3%;
+  bottom: 20%;
+  width: 63%;
+  opacity: 0.85;
+}
+
+.art-trend svg {
+  overflow: visible;
+  width: 100%;
+}
+
+.art-trend path:first-child {
+  fill: none;
+  stroke: var(--primary);
+  stroke-width: 3;
+}
+
+.art-trend .trend-area {
+  fill: color-mix(in oklch, var(--primary) 12%, transparent);
+  stroke: none;
+}
+
+.dialog-backdrop {
+  background: oklch(0.15 0.025 192 / 0.42);
+  backdrop-filter: blur(3px);
+}
+
+.transaction-dialog {
+  border-radius: 8px;
+}
+
+.segmented-control button {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 6px;
+  color: var(--muted-foreground);
+  font-size: 13px;
+}
+
+.segmented-control button.selected {
+  background: var(--card);
+  color: var(--primary);
+  box-shadow: 0 1px 3px oklch(0.2 0.02 190 / 0.11);
+}
+
+.mobile-nav .nav-item-active {
+  box-shadow: inset 0 -2px 0 var(--primary);
+}
+
+@media (max-width: 640px) {
+  .metric-panel {
+    padding: 16px;
+  }
+  .metric-number {
+    margin-top: 16px;
+  }
+  .finance-table th {
+    padding: 0 9px;
+  }
+  .finance-table td {
+    padding: 0 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
